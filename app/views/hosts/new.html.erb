@@ -1,0 +1,12 @@
+<h1>New Host</h1>
+
+<%= simple_form_for @host do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :availability %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.button :submit %>
+<% end %>
+
