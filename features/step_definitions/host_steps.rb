@@ -12,3 +12,17 @@ When("I create a host account with name {string}") do |name|
 end
 
 
+
+Given("I am on the new guest page") do
+  visit new_guest_path
+end
+
+When("I create a guest account with name {string}") do |name|
+  fill_in "guest[name]", with: name
+  fill_in 'guest[desired_location]', with: "New York City"
+  fill_in 'guest[meeting_times]', with: "Sunday mornings"
+  fill_in 'guest[email]', with: "adam@guestchurch.com"
+  fill_in 'guest[password]', with: "a very secret password"
+  fill_in 'guest[password_confirmation]', with: "a very secret password"
+  find('input[name="commit"]').click
+end
